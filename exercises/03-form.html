@@ -1,176 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise 03 — Form</title>
+<meta charset="UTF-8">
+<title>Exercise 03 - Form</title>
 </head>
 <body>
 
-    <h1>Registration Form</h1>
+<h1>Contact &amp; Preferences Form</h1>
 
-    <form action="/submit" method="POST" novalidate>
+<form action="#" method="post" novalidate>
 
-        <label for="fullname">Full Name</label>
-        <input>
-            type="text" 
-            id="fullname" 
-            name="fullname" 
-            autocomplete="name" 
-            required 
-            minlength="2"
-            placeholder="Jane Doe"
-    </input>
+  <div class="field">
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" autocomplete="name" required minlength="2" maxlength="60">
+  </div>
 
-        <label for="email">Email Address</label>
-        <input>
-            type="email" 
-            id="email" 
-            name="email" 
-            autocomplete="email" 
-            required
-            placeholder="jane@example.com"
-        </input>
+  <div class="field">
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" autocomplete="email" required>
+  </div>
 
-        <label for="phone">Phone Number</label>
-        <input>
-            type="tel" 
-            id="phone" 
-            name="phone" 
-            autocomplete="tel" 
-            required
-            placeholder="+234 (706) 568-5366"
-        </input>
+  <div class="field">
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="^[0-9+\-\s()]{7,20}$" placeholder="e.g. +234 800 000 0000">
+  </div>
 
-        <label for="password">Password</label>
-        <input> 
-            type="password" 
-            id="password" 
-            name="password" 
-            minlength="8"
-            required
-            placeholder="Minimum 8 characters"
-        </input>
+  <div class="field">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8">
+    <small>Minimum 8 characters.</small>
+  </div>
 
-        <label for="dob">Date of Birth</label>
-        <input> 
-            type="date" 
-            id="dob" 
-            name="dob" 
-            max="2026-08-23"
-            required
-        </input>
+  <div class="field">
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" autocomplete="bday" min="1900-01-01" max="2026-09-05">
+  </div>
 
-        <label for="experience">Years of Experience</label>
-        <input> 
-            type="number" 
-            id="experience" 
-            name="experience" 
-            min="0" 
-            max="50"
-            required
-        </input>
+  <div class="field">
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" min="13" max="120" step="1">
+  </div>
 
-        <label for="website">Personal Website</label>
-        <input> 
-            type="url" 
-            id="website" 
-            name="website" 
-            placeholder="https://example.com"
-        </input>
+  <div class="field">
+    <label for="satisfaction">Satisfaction Level (1–10)</label>
+    <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" step="1" value="5">
+  </div>
 
-        <label for="favcolor">Favorite Color</label>
-        <input> 
-            type="color" 
-            id="favcolor" 
-            name="favcolor" 
-            value="#4a90d9"
-        </input>
+  <div class="field">
+    <label for="website">Personal Website</label>
+    <input type="url" id="website" name="website" autocomplete="url" placeholder="https://example.com">
+  </div>
 
-        <label for="satisfaction">Satisfaction Level (1–10)</label>
-        <input> 
-            type="range" 
-            id="satisfaction" 
-            name="satisfaction" 
-            min="1" 
-            max="10" 
-            value="5"
-        </input>
+  <div class="field">
+    <label for="favcolor">Favorite Color</label>
+    <input type="color" id="favcolor" name="favcolor" value="#2266cc">
+  </div>
 
-        <label for="avatar">Profile Picture</label>
-        <input>
-            type="file" 
-            id="avatar" 
-            name="avatar" 
-            accept="image/png, image/jpeg"
-        </input>
+  <div class="field">
+    <label for="avatar">Upload Profile Picture</label>
+    <input type="file" id="avatar" name="avatar" accept="image/*">
+  </div>
 
-        <div class="inline" style="margin-top: 1rem;">
-            <input type="checkbox" id="newsletter" name="newsletter" value="yes">
-            <label for="newsletter">Subscribe to newsletter</label>
-        </div>
+  <fieldset>
+    <legend>Newsletter Preferences</legend>
+    <div class="checkbox-row">
+      <input type="checkbox" id="news-product" name="newsletter" value="product">
+      <label for="news-product">Product updates</label>
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" id="news-events" name="newsletter" value="events">
+      <label for="news-events">Event invitations</label>
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" id="terms" name="terms" value="agreed" required>
+      <label for="terms">I agree to the Terms and Conditions</label>
+    </div>
+  </fieldset>
 
-        <div class="inline">
-            <input type="checkbox" id="terms" name="terms" value="accepted" required>
-            <label for="terms">I agree to the terms and conditions</label>
-        </div>
+  <fieldset>
+    <legend>Preferred Contact Method</legend>
+    <div class="radio-row">
+      <input type="radio" id="contact-email" name="contact-method" value="email" checked>
+      <label for="contact-email">Email</label>
+    </div>
+    <div class="radio-row">
+      <input type="radio" id="contact-phone" name="contact-method" value="phone">
+      <label for="contact-phone">Phone</label>
+    </div>
+    <div class="radio-row">
+      <input type="radio" id="contact-mail" name="contact-method" value="mail">
+      <label for="contact-mail">Postal Mail</label>
+    </div>
+  </fieldset>
 
-        <fieldset>
-            <legend>Preferred Contact Method</legend>
+  <div class="field">
+    <label for="country">Country</label>
+    <select id="country" name="country" autocomplete="country-name" required>
+      <option value="">-- Select a country --</option>
+      <optgroup label="Africa">
+        <option value="NG">Nigeria</option>
+        <option value="GH">Ghana</option>
+        <option value="KE">Kenya</option>
+      </optgroup>
+      <optgroup label="Europe">
+        <option value="FR">France</option>
+        <option value="DE">Germany</option>
+        <option value="IT">Italy</option>
+      </optgroup>
+      <optgroup label="North America">
+        <option value="US">United States</option>
+        <option value="CA">Canada</option>
+        <option value="MX">Mexico</option>
+      </optgroup>
+    </select>
+  </div>
 
-            <div class="inline">
-                <input type="radio" id="contact-email" name="contact" value="email" required>
-                <label for="contact-email">Email</label>
-            </div>
+  <div class="field">
+    <label for="message">Additional Comments</label>
+    <textarea id="message" name="message" rows="5" maxlength="500" placeholder="Tell us anything else..."></textarea>
+  </div>
 
-            <div class="inline">
-                <input type="radio" id="contact-phone" name="contact" value="phone">
-                <label for="contact-phone">Phone</label>
-            </div>
+  <button type="submit">Submit Form</button>
 
-            <div class="inline">
-                <input type="radio" id="contact-sms" name="contact" value="sms">
-                <label for="contact-sms">SMS</label>
-            </div>
-
-        </fieldset>
-        <label for="country">Country</label>
-        <select id="country" name="country" required>
-            <option value="" disabled selected>Select a country</option>
-            <optgroup label="Africa">
-                <option value="ng">Nigeria</option>
-                <option value="za">Niger</option>
-                <option value="eg">Egypt</option>
-            </optgroup>
-            <optgroup label="Europe">
-                <option value="uk">United Kingdom</option>
-                <option value="de">Germany</option>
-                <option value="fr">France</option>
-            </optgroup>
-            <optgroup label="Asia">
-                <option value="jp">Japan</option>
-                <option value="cn">China</option>
-                <option value="in">India</option>
-            </optgroup>
-        </select>
-        <label for="bio">Short Bio</label>
-        <textarea 
-            id="bio" 
-            name="bio" 
-            rows="5" 
-            maxlength="500"
-            placeholder="Tell us a little about yourself (max 500 characters)..."
-        ></textarea>
-        <label for="preferred-time">Preferred Call Time</label>
-        <input>
-            type="time" 
-            id="preferred-time" 
-            name="preferred-time"
-        </input>
-
-        <button type="submit">Submit Registration</button>
-
-    </form>
+</form>
 
 </body>
 </html>
