@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exercise 04 - Labels (no for attributes)</title>
+</head>
+<body>
+
+<h1>Contact &amp; Preferences Form</h1>
+
+<form action="#" method="post" novalidate>
+
+  <div class="field">
+    <label>Full Name</label>
+    <input type="text" id="fullname" name="fullname" autocomplete="name" required minlength="2" maxlength="60">
+  </div>
+
+  <div class="field">
+    <label>Email Address</label>
+    <input type="email" id="email" name="email" autocomplete="email" required>
+  </div>
+
+  <div class="field">
+    <label>Phone Number</label>
+    <input type="tel" id="phone" name="phone" autocomplete="tel" pattern="^[0-9+\-\s()]{7,20}$" placeholder="e.g. +234 800 000 0000">
+  </div>
+
+  <div class="field">
+    <label>Password</label>
+    <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8">
+    <small>Minimum 8 characters.</small>
+  </div>
+
+  <div class="field">
+    <label>Date of Birth</label>
+    <input type="date" id="dob" name="dob" autocomplete="bday" min="1900-01-01" max="2026-09-05">
+  </div>
+
+  <div class="field">
+    <label>Age</label>
+    <input type="number" id="age" name="age" min="13" max="120" step="1">
+  </div>
+
+  <div class="field">
+    <label>Satisfaction Level (1–10)</label>
+    <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" step="1" value="5">
+  </div>
+
+  <div class="field">
+    <label>Personal Website</label>
+    <input type="url" id="website" name="website" autocomplete="url" placeholder="https://example.com">
+  </div>
+
+  <div class="field">
+    <label>Favorite Color</label>
+    <input type="color" id="favcolor" name="favcolor" value="#2266cc">
+  </div>
+
+  <div class="field">
+    <label>Upload Profile Picture</label>
+    <input type="file" id="avatar" name="avatar" accept="image/*">
+  </div>
+
+  <fieldset>
+    <legend>Newsletter Preferences</legend>
+    <div class="checkbox-row">
+      <input type="checkbox" id="news-product" name="newsletter" value="product">
+      <label>Product updates</label>
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" id="news-events" name="newsletter" value="events">
+      <label>Event invitations</label>
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" id="terms" name="terms" value="agreed" required>
+      <label>I agree to the Terms and Conditions</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Preferred Contact Method</legend>
+    <div class="radio-row">
+      <input type="radio" id="contact-email" name="contact-method" value="email" checked>
+      <label>Email</label>
+    </div>
+    <div class="radio-row">
+      <input type="radio" id="contact-phone" name="contact-method" value="phone">
+      <label>Phone</label>
+    </div>
+    <div class="radio-row">
+      <input type="radio" id="contact-mail" name="contact-method" value="mail">
+      <label>Postal Mail</label>
+    </div>
+  </fieldset>
+
+  <div class="field">
+    <label>Country</label>
+    <select id="country" name="country" autocomplete="country-name" required>
+      <option value="">-- Select a country --</option>
+      <optgroup label="Africa">
+        <option value="NG">Nigeria</option>
+        <option value="GH">Ghana</option>
+        <option value="KE">Kenya</option>
+      </optgroup>
+      <optgroup label="Europe">
+        <option value="FR">France</option>
+        <option value="DE">Germany</option>
+        <option value="IT">Italy</option>
+      </optgroup>
+      <optgroup label="North America">
+        <option value="US">United States</option>
+        <option value="CA">Canada</option>
+        <option value="MX">Mexico</option>
+      </optgroup>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Additional Comments</label>
+    <textarea id="message" name="message" rows="5" maxlength="500" placeholder="Tell us anything else..."></textarea>
+  </div>
+
+  <button type="submit">Submit Form</button>
+
+</form>
+
+</body>
+</html>
+
+<!--Observation without Label for-->
+
+<!--I Click directly on any label text "Full Name", "Email Address", etc. Nothing happen, focus stays wherever it was, no cursor appears in the input, no checkbox toggles.-->
+
+<!--I tab through the fields. For most inputs text, email, tel, password, date, etc. i hear just "edit text" or "edit text, blank", no field name at all,-->
+
+<!--Observation with Label for-->
+
+<!--clicking any label text will move focus into its input, and the screen reader will announce the full accessible name, like Email Address, edit text, required or Product updates, checkbox, not checked.-->
