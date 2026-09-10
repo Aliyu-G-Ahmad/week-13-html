@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exercise 08 - details, summary, meter</title>
+</head>
+<body>
+
+<h1>Server Status</h1>
+
+<!--<details> <summary>:-->
+<!--
+details is a chunk of content that starts collapsed and expands when the user clicks it. <summary> is
+mandatory as the FIRST child of <details>: it's the always visible label
+that acts as the clickable toggle (the browser draws its own triangle/arrow
+next to it automatically). 
+-->
+<details>
+
+  <summary>What does "degraded performance" mean?</summary>
+  <p>It means the service is up and responding, but slower than normal —
+  usually because one region is under heavier load than usual. No action is
+  needed on your end; we're already monitoring it.</p>
+</details>
+
+<details open>
+  <summary>How often is this page updated?</summary>
+  <p>Automatically, about once every 60 seconds. Manual incident notes are
+  added by the on-call engineer as needed.</p>
+</details>
+
+<h2>Current Metrics</h2>
+
+<!--<meter>:-->
+
+<!--
+This represents a scalar measurement within a known, bounded range like
+a gauge, It always needs a min/max (or defaults to
+0/1) and a current value; the browser then colors it automatically based on
+whether the value falls in an optimal, sub-optimal, or too-high/low range
+Each one also needs a text label since screen readers announce the numeric
+value but the label is what gives that number meaning.
+-->
+<div class="meter-row">
+  <label for="cpu">CPU Load</label>
+  <meter id="cpu" min="0" max="100" low="50" high="85" optimum="20" value="42">42 out of 100</meter>
+</div>
+
+<div class="meter-row">
+  <label for="disk">Disk Usage</label>
+  <meter id="disk" min="0" max="100" low="60" high="90" optimum="10" value="78">78 out of 100</meter>
+</div>
+
+<div class="meter-row">
+  <label for="uptime">Uptime Rating (last 30 days)</label>
+  <meter id="uptime" min="0" max="5" low="2" high="4" optimum="5" value="4.6">4.6 out of 5</meter>
+</div>
+
+</body>
+</html>
