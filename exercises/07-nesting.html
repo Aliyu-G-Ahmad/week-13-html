@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RecentRaise Header</title>
+</head>
+<body>
+<!-- a -->
+<p>Text <div>Block</div> more text</p>
+<!--<div> inside <p>-->
+
+<!-- b -->
+<ul>
+<li>One
+<li>Two
+</ul>
+<!-- Missing closing </li> tags -->
+
+<!-- c -->
+<a href="/x"><a href="/y">Nested</a></a>
+<!-- Nested <a> tags are invalid -->
+
+<!-- d -->
+<h1>Title <p>Paragraph inside a heading</p></h1>
+<!-- <p> inside <h1> is invalid -->
+
+<!-- e -->
+<p>Before <strong>bold text</p></strong> 
+<!-- Closing tags are mismatched -->
+
+</body>
+</html>
+
+<!--the browser separated the <p> from the <div>-->
+<!--the browser automatically closed the <li> tags-->
+  <!--the browser automatically closed the first <a> tag-->
+    <!--the browser automatically closed the <p> tag before the <strong> tag-->
+      <!--the browser automatically closed the <strong> tag after the <p> tag-->
